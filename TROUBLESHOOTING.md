@@ -58,13 +58,13 @@ Please check your connection string (provided via the `-c` option) is valid. Exa
 ```
 postgraphile -c postgres://postgres:postgres@localhost:5432/issn
 ```
+Passwords with special characters are accpeted by psql but not in the connection strings (-c). If you have special characters in your connection string password you may see the "password authentication failed" error and/or "percent-encoding" errors.
 
 If you believe the connection string to be valid, you can check it with the `psql` command line utility:
 
 ```
 psql postgres://postgres:postgres@localhost:5432/issn
 ```
-
 (Note this works with `postgres://` and `postgresql://` schemas, but not `pg://`)
 
 If this is failing then your issue lies outside of PostGraphile - check your postgresql roles and grants.
